@@ -47,7 +47,8 @@ const generateLetterButtons = () => {
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  // Replace this with your code
+  // set disabled attribute to true (source: https://www.w3schools.com/jsref/prop_pushbutton_disabled.asp)
+  buttonEl.disabled = true;
 };
 
 // This is a helper function we will use in the future
@@ -55,7 +56,15 @@ const disableLetterButton = (buttonEl) => {
 // For now, you should test it out to make sure it works
 
 const isLetterInWord = (letter) => {
-  // Replace this with your code
+  // solution (more efficient)
+  return document.querySelector(`div.${letter}`) !== null;
+
+  //original: 
+  // if (document.querySelector(`.${letter}`)) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 };
 
 // This is like if __name__ == '__main__' in Python
